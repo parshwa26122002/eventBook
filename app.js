@@ -3,12 +3,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {graphqlHTTP} = require('express-graphql');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const graphQlSchema = require('./graphql/schema/index');
 const graphQlResolvers = require('./graphql/resolvers/index');
 const isAuth = require('./middleware/is-auth');
 // creating express app server
 const app = express();
-const cors = require("cors");
+
 // using bodyParser in our app
 app.use(bodyParser.json());
 app.use(cors());
